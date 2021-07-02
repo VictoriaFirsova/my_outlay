@@ -1,0 +1,21 @@
+{% extends 'base.html' %} &nbsp;{% block content %}
+
+  <h2></h2>
+
+<form method="post">
+  {% csrf_token %}
+
+    <div class="mb-3">
+    <label class="form-label">Имя пользователя</label>
+
+    <input type="text" class="form-control" placeholder="Имя пользователя" aria-label="Имя пользователя" aria-describedby="basic-addon1" name="username" autofocus required id="id_username">
+
+    </div>
+    <div class="mb-3">
+        <label for="id_password"  class="form-label">Пароль</label>
+        <input type="password" name="password" class="form-control" required id="id_password">
+    </div>
+
+  <div><button type="submit" class="btn btn-primary">Submit</button></div>
+</form>
+{% endblock content %}

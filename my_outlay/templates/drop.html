@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+
+  <h4><center><strong>Загрузка файла только формата CSV</strong></center></h4>
+
+
+        <form method="post" enctype="multipart/form-data" id="upload-container" >{% csrf_token%}
+
+            <div class="input-group mb-3">
+
+                {{ form.as_p }}
+                <button class="btn btn-outline-secondary" id="inputGroupFileAddon04" type="submit"> Загрузить </button>
+            </div>
+        </form>
+
+{% endblock content %}
+
+
+

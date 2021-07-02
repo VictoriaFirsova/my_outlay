@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+{% if user.is_authenticated %}
+  <h4><center><label>Мои расходы</label></center></h4>
+<select class="form-select" aria-label="size 3 select example">
+  <option selected >Выбор категории</option>
+  <option value={{category.all}}>Все</option>
+  <option value={{category.title.17}}>Продукты</option>
+  <option value={{category.title.2}}>Здоровье</option>
+  <option value={{category.title.7}}>Сигареты</option>
+  <option value={{category.title.10}}>Спорт</option>
+  <option value={{category.title.11}}>Рестораны</option>
+  <option value={{category.title.12}}>Развлечения</option>
+  <option value={{category.title.13}}>Бензин</option>
+  <option value={{category.title.16}}>Машина</option>
+  <option value={{category.title.18}}>Другое</option>
+
+</select>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Дата</th>
+      <th scope="col">Наименование операции</th>
+      <th scope="col">Сумма</th>
+      <th scope="col">валюта</th>
+      <th scope="col">Категория</th>
+      <th scope="col">my_category</th>
+    </tr>
+  </thead>
+  {% for statement in statements %}
+  <tbody>
+
+      <tr>
+        <th scope="row">{{Statement.id}}</th>
+         <td>{{Statement.date}}</td>
+        <td>{{Statement.operation_name}}</td>
+        <td>{{Statement.amount}}</td>
+        <td>{{Statement.currency}}</td>
+        <td>{{Statement.category}}</td>
+        <td>{{Statement.my_category}}</td>
+      </tr>
+   </tbody>
+    {% endfor %}
+</table>
+
+
+
+
+
+
+{% endif %}
+
+{% endblock content %}
+
+
